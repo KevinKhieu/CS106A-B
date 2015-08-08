@@ -43,9 +43,8 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 		if (database.containsKey(friend)){
 			FacePamphletProfile returnProfile = database.get(friend);
 			return returnProfile;
-		} else {
-			return null;
 		}
+		return null;
 	}
 	
 	
@@ -81,11 +80,9 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 	 */
 	public boolean containsProfile(String name) {
 		String friend = adjustEntry(name);
-		if (database.containsKey(friend)){
+		if (database.containsKey(friend))
 			return true;
-		} else {
 			return false;
-		}
 	}
 	
 	/* Adjusts each entry that is read so that they are the same format.
@@ -98,17 +95,17 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 			// Makes each Token in the tokenizer a new word with only the first letter of the word uppercase.
 			// Ex.: "kevin" -> "Kevin"
 			String next = tokenizer.nextToken();
-      char first = next.charAt(0);
-      first = Character.toUpperCase(first);
-      String rest = next.substring(1);
-      rest = rest.toLowerCase();
-      String edittedName = first + rest;
-	        
-      // Adds the fixed name to the finalName string.
-      finalName += edittedName + " ";
+			char first = next.charAt(0);
+			first = Character.toUpperCase(first);
+			String rest = next.substring(1);
+			rest = rest.toLowerCase();
+			String edittedName = first + rest;
+			        
+			// Adds the fixed name to the finalName string.
+			finalName += edittedName + " ";
 		}
 		// Fix finalName so that it doesn't have that awkward space at the end.
 		finalName = finalName.substring(0,finalName.length()-1);
-    return finalName;
+    		return finalName;
 	}
 }
