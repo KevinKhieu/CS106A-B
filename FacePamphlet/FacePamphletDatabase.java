@@ -21,12 +21,12 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 	 *  is the same as an existing name in the database, the existing profile is replaced.
 	 */
 	public void addProfile(FacePamphletProfile profile) {
-		// If the database doesn't have the passed profile, we add the profile to the database.
-		if (!database.containsKey(profile.getName())){
-			database.put(profile.getName(), profile);
-		} else {
+		if (database.containsKey(profile.getName())){
 			// If we do have one, we remove the old profile and replace it with the new profile.
 			database.remove(profile.getName());
+			database.put(profile.getName(), profile);
+		} else {
+			// If the database doesn't have the passed profile, we add the profile to the database.
 			database.put(profile.getName(), profile);
 		}
 	}
@@ -91,13 +91,12 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 		StringTokenizer tokenizer = new StringTokenizer(friend);
 		String finalName = "";
 		while (tokenizer.hasMoreTokens()){
-			
 			// Makes each Token in the tokenizer a new word with only the first letter of the word uppercase.
 			// Ex.: "kevin" -> "Kevin"
 			String next = tokenizer.nextToken();
 			char first = next.charAt(0);
-			first = Character.toUpperCase(first);
 			String rest = next.substring(1);
+			first = Character.toUpperCase(first);
 			rest = rest.toLowerCase();
 			String edittedName = first + rest;
 			        
@@ -105,7 +104,7 @@ public class FacePamphletDatabase implements FacePamphletConstants {
 			finalName += edittedName + " ";
 		}
 		// Fix finalName so that it doesn't have that awkward space at the end.
-		finalName = finalName.substring(0,finalName.length()-1);
+		finalName = finalName.substring(0, finalName.length()-1);
     		return finalName;
 	}
 }
