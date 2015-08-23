@@ -11,7 +11,7 @@ public class Move {
 	int power;	// Strength of Move
 	int accuracy;	// Accuracy of Move
 	
-	// We pass in the file Pokemon-Moves.txt to read in all possible moves for the game.
+	// We pass in a line read from Pokemon-Moves.txt to parse the details corresponding to this move.
 	public Move (String line){
 		int nameEnd = line.indexOf(" ");
 		name = line.substring(0,nameEnd);
