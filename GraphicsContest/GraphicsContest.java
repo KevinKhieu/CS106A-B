@@ -2,7 +2,8 @@
  * File: GraphicsContest.java
  * --------------------------
  * Title: Pokemon Ruby Elite Four Demo
- * Description: Replication of Pokemon Ruby version's Elite Four with modified battle mechanics. 
+ * Description: Replication of Pokemon Ruby version's Elite Four with modified battle mechanics.
+ * Entry for Stanford's CS106A Introductory Java Course's Graphics Contest.
  * Author: Kevin Khieu
  * 
  * Note/Disclaimer: I do not own any of the images used in this game - I pulled most of them 
