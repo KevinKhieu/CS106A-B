@@ -1,12 +1,6 @@
-import acm.util.*;
-import acm.program.*;
-import acm.graphics.*;
-import acm.io.*;
-import java.io.*;
-import java.util.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.awt.*;
+/* File: PokemonConstants.java
+ * Author: Kevin Khieu
+ * Defines constants used throughout the program. */
 
 // Global Constants
 public interface PokemonConstants {
