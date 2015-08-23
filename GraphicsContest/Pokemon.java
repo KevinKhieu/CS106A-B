@@ -1,15 +1,10 @@
+/* File: Pokemon.java
+ * Author: Kevin Khieu
+ * Defines the behavior of a Pokemon in the game. Pokemon are comprised of moves, types, statistics, and a name.*/
+ 
 import acm.util.*;
-import acm.program.*;
-import acm.graphics.*;
-import acm.io.*;
-import java.io.*;
 import java.util.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.awt.*;
 
-// Class that defines a Pokemon.
-// Class Constants: Stats, Moves, Graphics, Sound.
 public class Pokemon {
 	
 	// Private Instance Variables
@@ -54,6 +49,7 @@ public class Pokemon {
 		}
 	}
 	
+	/* Getter Functions */
 	public String getName(){
 		return name;
 	}
@@ -111,6 +107,7 @@ public class Pokemon {
 		return move4;
 	}
 	
+	// We use a random generator to determine what move the opponent will use for his/her pokemon in battle. */
 	public String chooseMove(){
 		int x = rgen.nextInt(0,3);
 		if (x == 0){
@@ -124,6 +121,7 @@ public class Pokemon {
 		}
 	}
 	
+	// Determine if a Pokemon is dead by seeing if its HP is equal to or less than 0.
 	public boolean isDead(){
 		if(statistics[0] <= 0){
 			return true;
