@@ -2,8 +2,7 @@
  * File: GraphicsContest.java
  * --------------------------
  * Title: Pokemon Ruby Elite Four Demo
- * Description: Replication of Pokemon Ruby version's Elite Four with modified battle mechanics.
- * Entry for Stanford's CS106A Introductory Java Course's Graphics Contest.
+ * Description: Replication of Pokemon Ruby version's Elite Four with modified battle mechanics. 
  * Author: Kevin Khieu
  * 
  * Note/Disclaimer: I do not own any of the images used in this game - I pulled most of them 
@@ -370,6 +369,25 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		pause(500);
 	}
 	
+	private void printDialogue(String line1, String line2) {
+		Line1 = new GLabel(line1, Line1X, Line1Y);
+		Line1.setFont("COURIER-15");
+		Line1.setColor(Color.BLACK);
+		add(Line1);
+		
+		Line2 = new GLabel(line2, Line2X, Line2Y);
+		Line2.setFont("COURIER-15");
+		Line2.setColor(Color.BLACK);
+		add(Line2);
+		
+		advance = false;
+		while(!advance){
+			pause(1);
+		}
+		remove(Line1);
+		remove(Line2);
+	}
+	
 	// Professor Oak runs the user through the tutorial.
 	// We also give the user the option to give up now while he/she still has pride.
 	private void runTutorial(){
@@ -383,324 +401,26 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		textfield.scale(GAME_WIDTH/textfield.getWidth());
 		add(textfield, BORDER,bottomGameWindow-textfield.getHeight());
 		
-		Line1 = new GLabel("Welcome to the world", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
+		printDialogue("Welcome to the world", "of Pokemon!");
+		printDialogue("My name is Prof. Oak. I will", "guide you through this game.");
+		printDialogue("In this demo, you will be", "challenging the Elite Four.");
+		printDialogue("The group is comprised", "of four of the best");
+		printDialogue("Pokemon trainers in the", "world!");
+		printDialogue("Beat them all, and you will", "be crowned the Pokemon");
+		printDialogue("Champion in the Hoenn ", "Region!");
+		printDialogue("Are you ready to begin?", "");
+		printDialogue("You will be given five", "pre-chosen Pokemon to fight");
+		printDialogue("with: Blaziken, Swampert", "Sceptile, Raichu, -");
+		printDialogue("and Rayquaza.", "Each has its own strengths -");
+		printDialogue("and weaknesses. Use your", "Pokemon to their best -");
+		printDialogue("potential, and you may", "become a CHAMPION!");
+		printDialogue("Note that for this demo,", "you cannot use items or");
+		printDialogue("switch Pokemon, and battle", "mechanics have been changed.");
+		printDialogue("In the game, use the arrow", "keys, A, and B buttons");
+		printDialogue("to navigate the screen.", "If you feel like quitting at");
+		printDialogue("any time, close the screen", "to end the game.");
+		printDialogue("Good Luck! You'll need it.", "Press A to continue...");
 		
-		Line2 = new GLabel("of Pokemon!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("My name is Prof. Oak. I will", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("guide you through this game.", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("In this demo, you will be", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("challenging the Elite Four.", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("The group is comprised", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("of four of the best", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("Pokemon trainers in the", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("world!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("Beat them all, and you will", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("be crowned the Pokemon", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("Champion in the Hoenn ", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Region!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("Are you ready to begin?", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		addYesNo();
-		scene=1;
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		
-		Line1 = new GLabel("You will be given five", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("pre-chosen Pokemon to fight", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("with: Blaziken, Swampert", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Sceptile, Raichu, -", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("and Rayquaza.", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Each has its own strengths -", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("and weaknesses. Use your", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Pokemon to their best -", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("potential, and you may", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("become a CHAMPION!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("Note that for this demo,", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("you cannot use items or", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("switch Pokemon, and battle", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("mechanics have been changed.", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("In the game, use the arrow", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("keys, A, and B buttons", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("to navigate the screen.", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("If you feel like quitting at", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("any time, close the screen", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("to end the game.", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("Good Luck! You'll need it.", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Press A to continue...", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
 		remove(textfield);
 		pause(500);
 		remove(background);
@@ -907,16 +627,7 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		No.sendToFront();
 	}
 	
-	// Post-tutorial sequence. 
-	private void playGame(){
-		
-		/* Sydney: First Challenge
-		 * The first room the user is placed in is Sydney's room. The user can walk 
-		 * around the room, and when he clicks A while facing Sydney, he will enter a 
-		 * battle with him. If user wins, he/she moves on to next room.
-		 */
-		
-		// Sets background to be the correct image.
+	private void firstChallenge(){
 		background=new GImage("Sydney.png");
 		background.setSize(GAME_WIDTH, GAME_HEIGHT);
 		add(background,BORDER,BORDER);
@@ -947,59 +658,9 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		textfield.scale(GAME_WIDTH/textfield.getWidth());
 		add(textfield, BORDER,bottomGameWindow-textfield.getHeight());
 		
-		Line1 = new GLabel("Welcome to the Elite Four!", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("I shall be your first", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("challenge. If you defeat", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("me, you will move on!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("Ready? Here I come!", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		
-		// Battle Sequence
-		remove(Line1);
-		remove(Line2);
+		printDialogue("Welcome to the Elite Four!", "I shall be your first");
+		printDialogue("challenge. If you defeat", "me, you will move on!");
+		printDialogue("Ready? Here I come!", "");
 		remove(textfield);
 		
 		// Blinks the screen once to indicate a battle will begin. 
@@ -1034,26 +695,12 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		textfield.scale(GAME_WIDTH/textfield.getWidth());
 		add(textfield, BORDER,bottomGameWindow-textfield.getHeight());
 		
-		Line1 = new GLabel("I will now bring you", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("to the next room.", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
+		printDialogue("I will now bring you", "to the next room.");
 		pause(1000);
 		remove(textfield);
-		remove(Line1);
-		remove(Line2);
-		
-		/* Phoebe: Second Challenge
-		 * The second room the user is placed in is Phoebe's room. The user can walk 
-		 * around the room, and when he clicks A while facing Phoebe, he will enter a 
-		 * battle with her. She is slightly more challenging than Sydney.
-		 */
+	}
+	
+	private void secondChallenge(){
 		remove(background);
 		remove(opponentSprite);
 		remove(trainer);
@@ -1085,74 +732,11 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		textfield.scale(GAME_WIDTH/textfield.getWidth());
 		add(textfield, BORDER,bottomGameWindow-textfield.getHeight());
 		
-		Line1 = new GLabel("Hello! I'm Phoebe.", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("I will be your next", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("challenge. If you defeat", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("me, you will move on!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("I'm stronger than Sydney", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("so be careful!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("Let's Battle!", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		
-		remove(Line1);
-		remove(Line2);
+		printDialogue("Hello! I'm Phoebe", "I will be your next");
+		printDialogue("challenge. If you defeat", "me, you will move on!");
+		printDialogue("I'm stronger than Sydney", "so be careful!");
+		printDialogue("Let's Battle!", "");
+
 		remove(textfield);
 		battleHype();
 		scene = -1;
@@ -1177,24 +761,12 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		textfield.scale(GAME_WIDTH/textfield.getWidth());
 		add(textfield, BORDER,bottomGameWindow-textfield.getHeight());
 		
-		Line1 = new GLabel("I will now bring you", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("to the next room.", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
+		printDialogue("I will now bring you", "to the next room.");
 		pause(1000);
 		remove(textfield);
-		remove(Line1);
-		remove(Line2);
-		
-		/* Glacia: Third Challenge
-		 * Same room mechanics as the previous two rooms.
-		 */		
+	}
+	
+	private void thirdChallenge(){
 		remove(background);
 		remove(opponentSprite);
 		remove(trainer);
@@ -1223,74 +795,11 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		textfield.scale(GAME_WIDTH/textfield.getWidth());
 		add(textfield, BORDER,bottomGameWindow-textfield.getHeight());
 		
-		Line1 = new GLabel("Welcome. My name is", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Glacia, and I am the", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("third challenge in the ", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Elite Four. Beat me, and", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("you will advance to the", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Champion Battle.", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("Let's Battle!", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		
-		remove(Line1);
-		remove(Line2);
+		printDialogue("Welcome. My name is", "Glacia, and I am the");
+		printDialogue("third challenge in the ", "Elite Four. Beat me, and");
+		printDialogue("you will advance to the", "Champion Battle.");
+		printDialogue("Let's Battle!", "");
+
 		remove(textfield);
 		battleHype();
 		scene = -1;
@@ -1315,28 +824,14 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		textfield.scale(GAME_WIDTH/textfield.getWidth());
 		add(textfield, BORDER,bottomGameWindow-textfield.getHeight());
 		
-		Line1 = new GLabel("I will now bring you", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("to the final room.", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
+		printDialogue("I will now bring you", "to the final room.");
 		pause(1000);
 		remove(textfield);
-		remove(Line1);
-		remove(Line2);
+
 		remove(background);
-		
-		/* Drake: Last Challenge
-		 * Same room mechanics as the previous three rooms. If the user wins here, he/she
-		 * becomes Champion. (I removed the final champion from the game due to time constraints
-		 * in programming this, so if you know about Pokemon and are wondering why I stopped at
-		 * Drake, that's why haha).
-		 */		
+	}
+	
+	private void fourthChallenge(){
 		remove(opponentSprite);
 		remove(trainer);
 		facingTrainer = false;
@@ -1367,72 +862,10 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		textfield.scale(GAME_WIDTH/textfield.getWidth());
 		add(textfield, BORDER,bottomGameWindow-textfield.getHeight());
 		
-		Line1 = new GLabel("You're really something, kid.", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Few people have ever made", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("it this far in the Elite", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Four. If you win this, ", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		Line1 = new GLabel("you will become the next", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Pokemon Champion!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		Line1 = new GLabel("I won't hold back...", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("Let's do this!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
+		printDialogue("You're really something, kid.", "Few people have ever made");
+		printDialogue("it this far in the Elite", "Four. If you win this, ");
+		printDialogue("you will become the next", "Pokemon Champion!");
+		printDialogue("I won't hold back...", "Let's do this!");
 		remove(textfield);
 		battleHype();
 		scene = -1;
@@ -1458,56 +891,42 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		textfield.scale(GAME_WIDTH/textfield.getWidth());
 		add(textfield, BORDER,bottomGameWindow-textfield.getHeight());
 		
-		Line1 = new GLabel("You definitely have the", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
+		printDialogue("You definitely have the", "skills of a true champ!");
+		printDialogue("I'm afraid I must admit ", "defeat - you are a very");
+		printDialogue("skilled trainer and worthy", "of being Pokemon Champion!");
 		
-		Line2 = new GLabel("skills of a true champ!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
+	}
+	// Post-tutorial sequence. 
+	private void playGame(){
 		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
+		/* Sydney: First Challenge
+		 * The first room the user is placed in is Sydney's room. The user can walk 
+		 * around the room, and when he clicks A while facing Sydney, he will enter a 
+		 * battle with him. If user wins, he/she moves on to next room.
+		 */
 		
-		Line1 = new GLabel("I'm afraid I must admit ", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
+		firstChallenge();
 		
-		Line2 = new GLabel("defeat - you are a very", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
+		/* Phoebe: Second Challenge
+		 * The second room the user is placed in is Phoebe's room. The user can walk 
+		 * around the room, and when he clicks A while facing Phoebe, he will enter a 
+		 * battle with her. She is slightly more challenging than Sydney.
+		 */
+		secondChallenge();
 		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
+		/* Glacia: Third Challenge
+		 * Same room mechanics as the previous two rooms.
+		 */		
 		
-		Line1 = new GLabel("skilled trainer and worthy", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
+		thirdChallenge();
 		
-		Line2 = new GLabel("of being Pokemon Champion!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
+		/* Drake: Last Challenge
+		 * Same room mechanics as the previous three rooms. If the user wins here, he/she
+		 * becomes Champion. (I removed the final champion from the game due to time constraints
+		 * in programming this, so if you know about Pokemon and are wondering why I stopped at
+		 * Drake, that's why haha).
+		 */		
+		fourthChallenge();
 		
 		// WINNER
 		Line1 = new GLabel("Congratulations! You win!", Line1X, Line1Y);
@@ -1530,10 +949,24 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		}		
 	}
 	
-	// Fighting Sydney Battle Sequence!
 	private void fightSydney(){
-		// Sets Sydney as the current elitefour we are facing.
-		elitefour = challengers.findEntry("Sydney");
+		fightBattle("Sydney", "SydneyTrainer.png", "Mightyena.png", "Shiftry.png", "Cacturne.png", "Sharpedo.png", "Absol.png");
+	}
+	
+	private void fightPhoebe() {
+		fightBattle("Phoebe", "PhoebeTrainer.png", "Dusclops.png", "Banette.png", "Sableye.png", "Banette.png", "Dusclops.png");
+	}
+	
+	private void fightGlacia() {
+		fightBattle("Glacia", "GlaciaTrainer.png", "Glalie.png", "Sealeo.png", "Sealeo.png", "Glalie.png", "Walrein.png");
+	}
+	
+	private void fightDrake() {
+		fightBattle("Drake", "DrakeTrainer.png", "Shelgon.png", "Altaria.png", "Flygon.png", "Flygon.png", "Salamence.png");
+	}
+	
+	private void fightBattle(String champion, String imageTitle, String pokemon1, String pokemon2, String pokemon3, String pokemon4, String pokemon5) {
+		elitefour = challengers.findEntry(champion);
 		
 		// Pulls the Trainer characteristics for this battle.
 		us = challengers.findEntry("Trainer");
@@ -1555,7 +988,7 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		String opponentName = elitefour.getName();
 		
 		// Opponent's face image in battle.
-		opponent = new GImage("SydneyTrainer.png");
+		opponent = new GImage(imageTitle);
 		
 		// Our face image in battle.
 		trainerSprite = new GImage("Trainer_Battle.png");
@@ -1617,7 +1050,7 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 			// Starting condition means we both send out new pokemon.
 			if (theirPKMNLeft == 5 && ourPKMNLeft == 5){
 				theirCurrent = theirPKMN1;
-				opponentPokemon = new GImage("Mightyena.png");
+				opponentPokemon = new GImage(pokemon1);
 				ourCurrent = ourPKMN1;
 				ourPokemon = new GImage("Blaziken.png");
 			}
@@ -1625,16 +1058,16 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 			// Otherwise we determine which pokemon each player sends out one at a time.
 			if (theirPKMNLeft ==4){
 				theirCurrent = theirPKMN2; 
-				opponentPokemon = new GImage("Shiftry.png");
+				opponentPokemon = new GImage(pokemon2);
 			} else if (theirPKMNLeft ==3){
 				theirCurrent = theirPKMN3; 
-				opponentPokemon = new GImage("Cacturne.png");
+				opponentPokemon = new GImage(pokemon3);
 			} else if (theirPKMNLeft ==2){
 				theirCurrent = theirPKMN4; 
-				opponentPokemon = new GImage("Sharpedo.png");
+				opponentPokemon = new GImage(pokemon4);
 			} else if (theirPKMNLeft ==1){
 				theirCurrent = theirPKMN5; 
-				opponentPokemon = new GImage("Absol.png");
+				opponentPokemon = new GImage(pokemon5);
 			}
 			
 			if (ourPKMNLeft ==4){
@@ -1794,7 +1227,7 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 				opponentDefeated = false;
 			}
 			// Runs the battle with the current Pokemon in battle.
-			runBattle("Sydney",ourCurrent, theirCurrent, ourPokemon, opponentPokemon);
+			runBattle(champion,ourCurrent, theirCurrent, ourPokemon, opponentPokemon);
 			
 			// Analyzes post battle conditions to determine further action.
 			analyzeBattle();
@@ -1811,7 +1244,7 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 			remove(theirMaxHPIndicator);
 			remove(theirHPIndicator);
 			opponentName = elitefour.getName();
-			opponent = new GImage("SydneyTrainer.png");
+			opponent = new GImage(imageTitle);
 			trainerSprite = new GImage("Trainer_Battle.png");
 			opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
 			trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
@@ -1854,7 +1287,7 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 			remove(theirMaxHPIndicator);
 			remove(theirHPIndicator);
 			opponentName = elitefour.getName();
-			opponent = new GImage("SydneyTrainer.png");
+			opponent = new GImage(imageTitle);
 			trainerSprite = new GImage("Trainer_Battle.png");
 			opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
 			trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
@@ -1889,7 +1322,7 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 			scene = 2;
 		}
 	}
-	
+
 	// Runs our Battle between two pokemon.
 	private void runBattle(String face, Pokemon ourCurrent, Pokemon theirCurrent, GImage ourPokemon, GImage opponentPokemon){
 		// Gets the level of the EliteFour member we are facing.
@@ -1963,976 +1396,7 @@ public class GraphicsContest extends GraphicsProgram implements PokemonConstants
 		
 	}
 	
-	// Same as fightSydney() except Phoebe-specific files are put in place of Sydney's files.
-	private void fightPhoebe(){
-		elitefour = challengers.findEntry("Phoebe");
-		us = challengers.findEntry("Trainer");
-		ourPKMN1 = pokedex.findEntry(us.getFirstPokemon());
-		ourPKMN2 = pokedex.findEntry(us.getSecondPokemon());
-		ourPKMN3 = pokedex.findEntry(us.getThirdPokemon());
-		ourPKMN4 = pokedex.findEntry(us.getFourthPokemon());
-		ourPKMN5 = pokedex.findEntry(us.getFifthPokemon());
-		theirPKMN1 = pokedex.findEntry(elitefour.getFirstPokemon());
-		theirPKMN2 = pokedex.findEntry(elitefour.getSecondPokemon());
-		theirPKMN3 = pokedex.findEntry(elitefour.getThirdPokemon());
-		theirPKMN4 = pokedex.findEntry(elitefour.getFourthPokemon());
-		theirPKMN5 = pokedex.findEntry(elitefour.getFifthPokemon());
-		
-		usDefeated = false;
-		opponentDefeated = false;
-		String opponentName = elitefour.getName();
-		opponent = new GImage("PhoebeTrainer.png");
-		trainerSprite = new GImage("Trainer_Battle.png");
-		opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-		trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
-		add(trainerSprite, getWidth()-BORDER-trainerSprite.getWidth(),BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-		add(opponent, BORDER+0,275-224+20);
-		background2.sendToBack();
-		opponentSprite.sendToBack();
-		trainer.sendToBack();
-		background.sendToBack();
-		while(opponent.getX()<239){
-			opponent.move(3,0);
-			trainerSprite.move(-3, 0);
-			pause(9);
-		}
-		scene = 0;
-		pause(500);
-		Line1 = new GLabel("You have been challenged", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("by Elite Four "+ opponentName + "!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		scene = -1;
-		while(opponent.getX()<GAME_WIDTH-BORDER-opponent.getWidth()){
-			opponent.move(4,0);
-			pause(4);
-		}
-		while(trainerSprite.getX()>BORDER){
-			trainerSprite.move(-4,0);
-			pause(4);
-		}
-		remove(opponent);
-		remove(trainerSprite);
-		theirPKMNLeft=5;
-		ourPKMNLeft=5;
-		theirResetHP = false;
-		usResetHP = false;
-		while (ourPKMNLeft>0 && theirPKMNLeft >0){
-			if (theirPKMNLeft == 5 && ourPKMNLeft == 5){
-				theirCurrent = theirPKMN1;
-				opponentPokemon = new GImage("Dusclops.png");
-				ourCurrent = ourPKMN1;
-				ourPokemon = new GImage("Blaziken.png");
-			}
-
-			if (theirPKMNLeft ==4){
-				theirCurrent = theirPKMN2; 
-				opponentPokemon = new GImage("Banette.png");
-			} else if (theirPKMNLeft ==3){
-				theirCurrent = theirPKMN3; 
-				opponentPokemon = new GImage("Sableye.png");
-			} else if (theirPKMNLeft ==2){
-				theirCurrent = theirPKMN4; 
-				opponentPokemon = new GImage("Banette.png");
-			} else if (theirPKMNLeft ==1){
-				theirCurrent = theirPKMN5; 
-				opponentPokemon = new GImage("Dusclops.png");
-			}
-			
-			if (ourPKMNLeft ==4){
-				ourCurrent = ourPKMN2; 
-				ourPokemon = new GImage("Swampert.png");
-			} else if (ourPKMNLeft ==3){
-				ourCurrent = ourPKMN3;
-				ourPokemon = new GImage("Sceptile.png");
-			} else if (ourPKMNLeft ==2){
-				ourCurrent = ourPKMN4;
-				ourPokemon = new GImage("Rayquaza.png");
-			} else if (ourPKMNLeft ==1){
-				ourCurrent = ourPKMN5; 
-				ourPokemon = new GImage("Raichu.png");
-			}
-			if (!usDefeated && !opponentDefeated){
-				String line1 = elitefour.getName() +" sent out "+ theirCurrent.getName() + "!";
-				String line2;
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				opponent = opponentPokemon;
-				opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(opponent, getWidth()-BORDER-opponent.getWidth(),275-224+20);
-				background2.sendToBack();
-				opponentSprite.sendToBack();
-				trainer.sendToBack();
-				background.sendToBack();
-				while(opponent.getX()>239){
-					opponent.move(-3,0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-				
-				line1 = "Go "+ ourCurrent.getName() + "!";
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				trainerSprite = ourPokemon;
-				trainerSprite.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(trainerSprite, BORDER,BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-				
-				while(trainerSprite.getX()<75){
-					trainerSprite.move(3, 0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-
-				remove(background2);
-				background2=new GImage("BattleScreen1.jpg");
-				background2.setSize(GAME_WIDTH, GAME_HEIGHT);
-				add(background2,BORDER,BORDER);
-				trainerSprite.sendToFront();
-				opponent.sendToFront();
-				ourName = new GLabel(ourCurrent.getName(), ourNameX, ourNameY);
-				ourName.setFont("COURIER-15");
-				ourName.setColor(Color.BLACK);
-				add(ourName);
-				
-				theirName = new GLabel(theirCurrent.getName(), theirNameX, theirNameY);
-				theirName.setFont("COURIER-15");
-				theirName.setColor(Color.BLACK);
-				add(theirName);
-				usResetHP = true;
-				theirResetHP = true;
-			}
-			if (usDefeated){
-				String line1;
-				line1 = "Go "+ ourCurrent.getName() + "!";
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				trainerSprite = ourPokemon;
-				trainerSprite.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(trainerSprite, BORDER,BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-				
-				background2.sendToBack();
-				opponentSprite.sendToBack();
-				trainer.sendToBack();
-				background.sendToBack();
-				
-				
-				while(trainerSprite.getX()<75){
-					trainerSprite.move(3, 0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-
-				remove(background2);
-				background2=new GImage("BattleScreen1.jpg");
-				background2.setSize(GAME_WIDTH, GAME_HEIGHT);
-				add(background2,BORDER,BORDER);
-				trainerSprite.sendToFront();
-				opponent.sendToFront();
-				theirHPIndicator.sendToFront();
-				theirMaxHPIndicator.sendToFront();
-				theirName.sendToFront();
-				ourName = new GLabel(ourCurrent.getName(), ourNameX, ourNameY);
-				ourName.setFont("COURIER-15");
-				ourName.setColor(Color.BLACK);
-				add(ourName);
-				usResetHP = true;
-				usDefeated = false;
-				theirResetHP = false;
-				opponentDefeated=false;
-			}
-			if(opponentDefeated){
-				String line1 = elitefour.getName() +" sent out "+ theirCurrent.getName() + "!";
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				opponent = opponentPokemon;
-				opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(opponent, getWidth()-BORDER-opponent.getWidth(),275-224+20);
-				
-				background2.sendToBack();
-				opponentSprite.sendToBack();
-				trainer.sendToBack();
-				background.sendToBack();
-				
-				while(opponent.getX()>239){
-					opponent.move(-3,0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-				ourHPIndicator.sendToFront();
-				ourMaxHPIndicator.sendToFront();
-				ourName.sendToFront();
-				
-				theirName = new GLabel(theirCurrent.getName(), theirNameX, theirNameY);
-				theirName.setFont("COURIER-15");
-				theirName.setColor(Color.BLACK);
-				add(theirName);
-				theirResetHP = true;
-				opponentDefeated = false;
-				usDefeated = false;
-				usResetHP = false;
-			}
-			runBattle("Phoebe",ourCurrent, theirCurrent, ourPokemon, opponentPokemon);
-			analyzeBattle();
-		}
-		
-		if (ourPKMNLeft == 0){
-			remove(opponent);
-			remove(trainerSprite);
-			remove(theirName);
-			remove(ourName);
-			remove(ourMaxHPIndicator);
-			remove(ourHPIndicator);
-			remove(theirMaxHPIndicator);
-			remove(theirHPIndicator);
-			opponentName = elitefour.getName();
-			opponent = new GImage("PhoebeTrainer.png");
-			trainerSprite = new GImage("Trainer_Battle.png");
-			opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-			trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
-			add(trainerSprite, getWidth()-BORDER-trainerSprite.getWidth(),BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-			add(opponent, BORDER+0,275-224+20);
-			background2.sendToBack();
-			opponentSprite.sendToBack();
-			trainer.sendToBack();
-			background.sendToBack();
-			while(opponent.getX()<239){
-				opponent.move(3,0);
-				trainerSprite.move(-3, 0);
-				pause(9);
-			}
-			
-			Line1 = new GLabel("Darn... You weren't tough.", Line1X, Line1Y);
-			Line1.setFont("COURIER-15");
-			Line1.setColor(Color.BLACK);
-			add(Line1);
-			
-			Line2 = new GLabel("GAME OVER", Line2X, Line2Y);
-			Line2.setFont("COURIER-15");
-			Line2.setColor(Color.BLACK);
-			add(Line2);
-			advance = false;
-			scene = -1;
-			while(!advance){
-				pause(1);
-			}
-		}
-		if (theirPKMNLeft == 0){
-			remove(opponent);
-			remove(trainerSprite);
-			remove(theirName);
-			remove(ourName);
-			remove(ourMaxHPIndicator);
-			remove(ourHPIndicator);
-			remove(theirMaxHPIndicator);
-			remove(theirHPIndicator);
-			opponentName = elitefour.getName();
-			opponent = new GImage("PhoebeTrainer.png");
-			trainerSprite = new GImage("Trainer_Battle.png");
-			opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-			trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
-			add(trainerSprite, getWidth()-BORDER-trainerSprite.getWidth(),BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-			add(opponent, BORDER+0,275-224+20);
-			background2.sendToBack();
-			opponentSprite.sendToBack();
-			trainer.sendToBack();
-			background.sendToBack();
-			while(opponent.getX()<239){
-				opponent.move(3,0);
-				trainerSprite.move(-3, 0);
-				pause(9);
-			}
-			
-			Line1 = new GLabel("You won the battle!", Line1X, Line1Y);
-			Line1.setFont("COURIER-15");
-			Line1.setColor(Color.BLACK);
-			add(Line1);
-			
-			Line2 = new GLabel("Press A to continue on!", Line2X, Line2Y);
-			Line2.setFont("COURIER-15");
-			Line2.setColor(Color.BLACK);
-			add(Line2);
-			advance = false;
-			scene = 0;
-			while(!advance){
-				pause(1);
-			}
-			remove(Line1);
-			remove(Line2);
-			scene = 2;
-		}
-	}
 	
-	// Same as fightSydney() except Glacia-specific files are put in place of Sydney's files.
-	private void fightGlacia(){
-		elitefour = challengers.findEntry("Glacia");
-		us = challengers.findEntry("Trainer");
-		usDefeated = false;
-		opponentDefeated = false;
-		ourPKMN1 = pokedex.findEntry(us.getFirstPokemon());
-		ourPKMN2 = pokedex.findEntry(us.getSecondPokemon());
-		ourPKMN3 = pokedex.findEntry(us.getThirdPokemon());
-		ourPKMN4 = pokedex.findEntry(us.getFourthPokemon());
-		ourPKMN5 = pokedex.findEntry(us.getFifthPokemon());
-		theirPKMN1 = pokedex.findEntry(elitefour.getFirstPokemon());
-		theirPKMN2 = pokedex.findEntry(elitefour.getSecondPokemon());
-		theirPKMN3 = pokedex.findEntry(elitefour.getThirdPokemon());
-		theirPKMN4 = pokedex.findEntry(elitefour.getFourthPokemon());
-		theirPKMN5 = pokedex.findEntry(elitefour.getFifthPokemon());
-		
-		String opponentName = elitefour.getName();
-		opponent = new GImage("GlaciaTrainer.png");
-		trainerSprite = new GImage("Trainer_Battle.png");
-		opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-		trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
-		add(trainerSprite, getWidth()-BORDER-trainerSprite.getWidth(),BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-		add(opponent, BORDER+0,275-224+20);
-		background2.sendToBack();
-		opponentSprite.sendToBack();
-		trainer.sendToBack();
-		background.sendToBack();
-		while(opponent.getX()<239){
-			opponent.move(3,0);
-			trainerSprite.move(-3, 0);
-			pause(9);
-		}
-		scene = 0;
-		pause(500);
-		Line1 = new GLabel("You have been challenged", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("by Elite Four "+ opponentName + "!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		scene = -1;
-		while(opponent.getX()<GAME_WIDTH-BORDER-opponent.getWidth()){
-			opponent.move(4,0);
-			pause(4);
-		}
-		while(trainerSprite.getX()>BORDER){
-			trainerSprite.move(-4,0);
-			pause(4);
-		}
-		remove(opponent);
-		remove(trainerSprite);
-		theirPKMNLeft=5;
-		ourPKMNLeft=5;
-		theirResetHP = false;
-		usResetHP = false;
-		while (ourPKMNLeft>0 && theirPKMNLeft >0){
-			if (theirPKMNLeft == 5 && ourPKMNLeft == 5){
-				theirCurrent = theirPKMN1;
-				opponentPokemon = new GImage("Glalie.png");
-				ourCurrent = ourPKMN1;
-				ourPokemon = new GImage("Blaziken.png");
-			}
-
-			if (theirPKMNLeft ==4){
-				theirCurrent = theirPKMN2; 
-				opponentPokemon = new GImage("Sealeo.png");
-			} else if (theirPKMNLeft ==3){
-				theirCurrent = theirPKMN3; 
-				opponentPokemon = new GImage("Sealeo.png");
-			} else if (theirPKMNLeft ==2){
-				theirCurrent = theirPKMN4; 
-				opponentPokemon = new GImage("Glalie.png");
-			} else if (theirPKMNLeft ==1){
-				theirCurrent = theirPKMN5; 
-				opponentPokemon = new GImage("Walrein.png");
-			}
-			
-			if (ourPKMNLeft ==4){
-				ourCurrent = ourPKMN2; 
-				ourPokemon = new GImage("Swampert.png");
-			} else if (ourPKMNLeft ==3){
-				ourCurrent = ourPKMN3;
-				ourPokemon = new GImage("Sceptile.png");
-			} else if (ourPKMNLeft ==2){
-				ourCurrent = ourPKMN4;
-				ourPokemon = new GImage("Rayquaza.png");
-			} else if (ourPKMNLeft ==1){
-				ourCurrent = ourPKMN5; 
-				ourPokemon = new GImage("Raichu.png");
-			}
-			if (!usDefeated && !opponentDefeated){
-				String line1 = elitefour.getName() +" sent out "+ theirCurrent.getName() + "!";
-				String line2;
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				opponent = opponentPokemon;
-				opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(opponent, getWidth()-BORDER-opponent.getWidth(),275-224+20);
-				background2.sendToBack();
-				opponentSprite.sendToBack();
-				trainer.sendToBack();
-				background.sendToBack();
-				while(opponent.getX()>239){
-					opponent.move(-3,0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-				
-				line1 = "Go "+ ourCurrent.getName() + "!";
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				trainerSprite = ourPokemon;
-				trainerSprite.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(trainerSprite, BORDER,BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-				
-				while(trainerSprite.getX()<75){
-					trainerSprite.move(3, 0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-
-				remove(background2);
-				background2=new GImage("BattleScreen1.jpg");
-				background2.setSize(GAME_WIDTH, GAME_HEIGHT);
-				add(background2,BORDER,BORDER);
-				trainerSprite.sendToFront();
-				opponent.sendToFront();
-				ourName = new GLabel(ourCurrent.getName(), ourNameX, ourNameY);
-				ourName.setFont("COURIER-15");
-				ourName.setColor(Color.BLACK);
-				add(ourName);
-				
-				theirName = new GLabel(theirCurrent.getName(), theirNameX, theirNameY);
-				theirName.setFont("COURIER-15");
-				theirName.setColor(Color.BLACK);
-				add(theirName);
-				usResetHP = true;
-				theirResetHP = true;
-			}
-			if (usDefeated){
-				String line1;
-				line1 = "Go "+ ourCurrent.getName() + "!";
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				trainerSprite = ourPokemon;
-				trainerSprite.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(trainerSprite, BORDER,BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-				
-				background2.sendToBack();
-				opponentSprite.sendToBack();
-				trainer.sendToBack();
-				background.sendToBack();
-				
-				
-				while(trainerSprite.getX()<75){
-					trainerSprite.move(3, 0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-
-				remove(background2);
-				background2=new GImage("BattleScreen1.jpg");
-				background2.setSize(GAME_WIDTH, GAME_HEIGHT);
-				add(background2,BORDER,BORDER);
-				trainerSprite.sendToFront();
-				opponent.sendToFront();
-				theirHPIndicator.sendToFront();
-				theirMaxHPIndicator.sendToFront();
-				theirName.sendToFront();
-				ourName = new GLabel(ourCurrent.getName(), ourNameX, ourNameY);
-				ourName.setFont("COURIER-15");
-				ourName.setColor(Color.BLACK);
-				add(ourName);
-				usResetHP = true;
-				usDefeated = false;
-			}
-			if(opponentDefeated){
-				String line1 = elitefour.getName() +" sent out "+ theirCurrent.getName() + "!";
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				opponent = opponentPokemon;
-				opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(opponent, getWidth()-BORDER-opponent.getWidth(),275-224+20);
-				
-				background2.sendToBack();
-				opponentSprite.sendToBack();
-				trainer.sendToBack();
-				background.sendToBack();
-				
-				while(opponent.getX()>239){
-					opponent.move(-3,0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-				ourHPIndicator.sendToFront();
-				ourMaxHPIndicator.sendToFront();
-				ourName.sendToFront();
-				
-				theirName = new GLabel(theirCurrent.getName(), theirNameX, theirNameY);
-				theirName.setFont("COURIER-15");
-				theirName.setColor(Color.BLACK);
-				add(theirName);
-				theirResetHP = true;
-				opponentDefeated = false;
-			}
-			runBattle("Glacia",ourCurrent, theirCurrent, ourPokemon, opponentPokemon);
-			analyzeBattle();
-		}
-		if (ourPKMNLeft == 0){
-			remove(opponent);
-			remove(trainerSprite);
-			remove(theirName);
-			remove(ourName);
-			remove(ourMaxHPIndicator);
-			remove(ourHPIndicator);
-			remove(theirMaxHPIndicator);
-			remove(theirHPIndicator);
-			opponentName = elitefour.getName();
-			opponent = new GImage("GlaciaTrainer.png");
-			trainerSprite = new GImage("Trainer_Battle.png");
-			opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-			trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
-			add(trainerSprite, getWidth()-BORDER-trainerSprite.getWidth(),BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-			add(opponent, BORDER+0,275-224+20);
-			background2.sendToBack();
-			opponentSprite.sendToBack();
-			trainer.sendToBack();
-			background.sendToBack();
-			while(opponent.getX()<239){
-				opponent.move(3,0);
-				trainerSprite.move(-3, 0);
-				pause(9);
-			}
-			
-			Line1 = new GLabel("Come back next time, kid.", Line1X, Line1Y);
-			Line1.setFont("COURIER-15");
-			Line1.setColor(Color.BLACK);
-			add(Line1);
-			
-			Line2 = new GLabel("GAME OVER", Line2X, Line2Y);
-			Line2.setFont("COURIER-15");
-			Line2.setColor(Color.BLACK);
-			add(Line2);
-			advance = false;
-			scene = -1;
-			while(!advance){
-				pause(1);
-			}
-		}
-		if (theirPKMNLeft == 0){
-			remove(opponent);
-			remove(trainerSprite);
-			remove(theirName);
-			remove(ourName);
-			remove(ourMaxHPIndicator);
-			remove(ourHPIndicator);
-			remove(theirMaxHPIndicator);
-			remove(theirHPIndicator);
-			opponentName = elitefour.getName();
-			opponent = new GImage("GlaciaTrainer.png");
-			trainerSprite = new GImage("Trainer_Battle.png");
-			opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-			trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
-			add(trainerSprite, getWidth()-BORDER-trainerSprite.getWidth(),BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-			add(opponent, BORDER+0,275-224+20);
-			background2.sendToBack();
-			opponentSprite.sendToBack();
-			trainer.sendToBack();
-			background.sendToBack();
-			while(opponent.getX()<239){
-				opponent.move(3,0);
-				trainerSprite.move(-3, 0);
-				pause(9);
-			}
-			
-			Line1 = new GLabel("You won the battle!", Line1X, Line1Y);
-			Line1.setFont("COURIER-15");
-			Line1.setColor(Color.BLACK);
-			add(Line1);
-			
-			Line2 = new GLabel("Press A to continue on!", Line2X, Line2Y);
-			Line2.setFont("COURIER-15");
-			Line2.setColor(Color.BLACK);
-			add(Line2);
-			advance = false;
-			scene = 0;
-			while(!advance){
-				pause(1);
-			}
-			remove(Line1);
-			remove(Line2);
-			scene = 2;
-		}
-	}
-	
-	// Same as fightSydney() except Drake-specific files are put in place of Sydney's files.
-	private void fightDrake(){
-		elitefour = challengers.findEntry("Drake");
-		us = challengers.findEntry("Trainer");
-		usDefeated = false;
-		opponentDefeated = false;
-		ourPKMN1 = pokedex.findEntry(us.getFirstPokemon());
-		ourPKMN2 = pokedex.findEntry(us.getSecondPokemon());
-		ourPKMN3 = pokedex.findEntry(us.getThirdPokemon());
-		ourPKMN4 = pokedex.findEntry(us.getFourthPokemon());
-		ourPKMN5 = pokedex.findEntry(us.getFifthPokemon());
-		theirPKMN1 = pokedex.findEntry(elitefour.getFirstPokemon());
-		theirPKMN2 = pokedex.findEntry(elitefour.getSecondPokemon());
-		theirPKMN3 = pokedex.findEntry(elitefour.getThirdPokemon());
-		theirPKMN4 = pokedex.findEntry(elitefour.getFourthPokemon());
-		theirPKMN5 = pokedex.findEntry(elitefour.getFifthPokemon());
-		
-		String opponentName = elitefour.getName();
-		opponent = new GImage("DrakeTrainer.png");
-		trainerSprite = new GImage("Trainer_Battle.png");
-		opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-		trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
-		add(trainerSprite, getWidth()-BORDER-trainerSprite.getWidth(),BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-		add(opponent, BORDER+0,275-224+20);
-		background2.sendToBack();
-		opponentSprite.sendToBack();
-		trainer.sendToBack();
-		background.sendToBack();
-		while(opponent.getX()<239){
-			opponent.move(3,0);
-			trainerSprite.move(-3, 0);
-			pause(9);
-		}
-		scene = 0;
-		pause(500);
-		Line1 = new GLabel("You have been challenged", Line1X, Line1Y);
-		Line1.setFont("COURIER-15");
-		Line1.setColor(Color.BLACK);
-		add(Line1);
-		
-		Line2 = new GLabel("by Elite Four "+ opponentName + "!", Line2X, Line2Y);
-		Line2.setFont("COURIER-15");
-		Line2.setColor(Color.BLACK);
-		add(Line2);
-		advance = false;
-		while(!advance){
-			pause(1);
-		}
-		remove(Line1);
-		remove(Line2);
-		
-		scene = -1;
-		while(opponent.getX()<GAME_WIDTH-BORDER-opponent.getWidth()){
-			opponent.move(4,0);
-			pause(4);
-		}
-		while(trainerSprite.getX()>BORDER){
-			trainerSprite.move(-4,0);
-			pause(4);
-		}
-		remove(opponent);
-		remove(trainerSprite);
-		theirPKMNLeft=5;
-		ourPKMNLeft=5;
-		theirResetHP = false;
-		usResetHP = false;
-		while (ourPKMNLeft>0 && theirPKMNLeft >0){
-			if (theirPKMNLeft == 5 && ourPKMNLeft == 5){
-				theirCurrent = theirPKMN1;
-				opponentPokemon = new GImage("Shelgon.png");
-				ourCurrent = ourPKMN1;
-				ourPokemon = new GImage("Blaziken.png");
-			}
-
-			if (theirPKMNLeft ==4){
-				theirCurrent = theirPKMN2; 
-				opponentPokemon = new GImage("Altaria.png");
-			} else if (theirPKMNLeft ==3){
-				theirCurrent = theirPKMN3; 
-				opponentPokemon = new GImage("Flygon.png");
-			} else if (theirPKMNLeft ==2){
-				theirCurrent = theirPKMN4; 
-				opponentPokemon = new GImage("Flygon.png");
-			} else if (theirPKMNLeft ==1){
-				theirCurrent = theirPKMN5; 
-				opponentPokemon = new GImage("Salamence.png");
-			}
-			
-			if (ourPKMNLeft ==4){
-				ourCurrent = ourPKMN2; 
-				ourPokemon = new GImage("Swampert.png");
-			} else if (ourPKMNLeft ==3){
-				ourCurrent = ourPKMN3;
-				ourPokemon = new GImage("Sceptile.png");
-			} else if (ourPKMNLeft ==2){
-				ourCurrent = ourPKMN4;
-				ourPokemon = new GImage("Rayquaza.png");
-			} else if (ourPKMNLeft ==1){
-				ourCurrent = ourPKMN5; 
-				ourPokemon = new GImage("Raichu.png");
-			}
-			if (!usDefeated && !opponentDefeated){
-				String line1 = elitefour.getName() +" sent out "+ theirCurrent.getName() + "!";
-				String line2;
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				opponent = opponentPokemon;
-				opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(opponent, getWidth()-BORDER-opponent.getWidth(),275-224+20);
-				background2.sendToBack();
-				opponentSprite.sendToBack();
-				trainer.sendToBack();
-				background.sendToBack();
-				while(opponent.getX()>239){
-					opponent.move(-3,0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-				
-				line1 = "Go "+ ourCurrent.getName() + "!";
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				trainerSprite = ourPokemon;
-				trainerSprite.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(trainerSprite, BORDER,BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-				
-				while(trainerSprite.getX()<75){
-					trainerSprite.move(3, 0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-
-				remove(background2);
-				background2=new GImage("BattleScreen1.jpg");
-				background2.setSize(GAME_WIDTH, GAME_HEIGHT);
-				add(background2,BORDER,BORDER);
-				trainerSprite.sendToFront();
-				opponent.sendToFront();
-				ourName = new GLabel(ourCurrent.getName(), ourNameX, ourNameY);
-				ourName.setFont("COURIER-15");
-				ourName.setColor(Color.BLACK);
-				add(ourName);
-				
-				theirName = new GLabel(theirCurrent.getName(), theirNameX, theirNameY);
-				theirName.setFont("COURIER-15");
-				theirName.setColor(Color.BLACK);
-				add(theirName);
-				usResetHP = true;
-				theirResetHP = true;
-			}
-			if (usDefeated){
-				String line1;
-				line1 = "Go "+ ourCurrent.getName() + "!";
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				trainerSprite = ourPokemon;
-				trainerSprite.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(trainerSprite, BORDER,BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-				
-				background2.sendToBack();
-				opponentSprite.sendToBack();
-				trainer.sendToBack();
-				background.sendToBack();
-				
-				
-				while(trainerSprite.getX()<75){
-					trainerSprite.move(3, 0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-
-				remove(background2);
-				background2=new GImage("BattleScreen1.jpg");
-				background2.setSize(GAME_WIDTH, GAME_HEIGHT);
-				add(background2,BORDER,BORDER);
-				trainerSprite.sendToFront();
-				opponent.sendToFront();
-				theirHPIndicator.sendToFront();
-				theirMaxHPIndicator.sendToFront();
-				theirName.sendToFront();
-				ourName = new GLabel(ourCurrent.getName(), ourNameX, ourNameY);
-				ourName.setFont("COURIER-15");
-				ourName.setColor(Color.BLACK);
-				add(ourName);
-				usResetHP = true;
-				usDefeated = false;
-			}
-			if(opponentDefeated){
-				String line1 = elitefour.getName() +" sent out "+ theirCurrent.getName() + "!";
-				Line1 = new GLabel(line1, Line1X, Line1Y);
-				Line1.setFont("COURIER-15");
-				Line1.setColor(Color.BLACK);
-				add(Line1);
-				
-				opponent = opponentPokemon;
-				opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-				add(opponent, getWidth()-BORDER-opponent.getWidth(),275-224+20);
-				
-				background2.sendToBack();
-				opponentSprite.sendToBack();
-				trainer.sendToBack();
-				background.sendToBack();
-				
-				while(opponent.getX()>239){
-					opponent.move(-3,0);
-					pause(9);
-				}
-				pause(1000);
-				remove(Line1);
-				ourHPIndicator.sendToFront();
-				ourMaxHPIndicator.sendToFront();
-				ourName.sendToFront();
-				
-				theirName = new GLabel(theirCurrent.getName(), theirNameX, theirNameY);
-				theirName.setFont("COURIER-15");
-				theirName.setColor(Color.BLACK);
-				add(theirName);
-				theirResetHP = true;
-				opponentDefeated = false;
-			}
-			runBattle("Drake",ourCurrent, theirCurrent, ourPokemon, opponentPokemon);
-			analyzeBattle();
-		}
-		if (ourPKMNLeft == 0){
-			remove(opponent);
-			remove(trainerSprite);
-			remove(theirName);
-			remove(ourName);
-			remove(ourMaxHPIndicator);
-			remove(ourHPIndicator);
-			remove(theirMaxHPIndicator);
-			remove(theirHPIndicator);
-			opponentName = elitefour.getName();
-			opponent = new GImage("DrakeTrainer.png");
-			trainerSprite = new GImage("Trainer_Battle.png");
-			opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-			trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
-			add(trainerSprite, getWidth()-BORDER-trainerSprite.getWidth(),BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-			add(opponent, BORDER+0,275-224+20);
-			background2.sendToBack();
-			opponentSprite.sendToBack();
-			trainer.sendToBack();
-			background.sendToBack();
-			while(opponent.getX()<239){
-				opponent.move(3,0);
-				trainerSprite.move(-3, 0);
-				pause(9);
-			}
-			
-			Line1 = new GLabel("So close... Yet so far.", Line1X, Line1Y);
-			Line1.setFont("COURIER-15");
-			Line1.setColor(Color.BLACK);
-			add(Line1);
-			
-			Line2 = new GLabel("GAME OVER", Line2X, Line2Y);
-			Line2.setFont("COURIER-15");
-			Line2.setColor(Color.BLACK);
-			add(Line2);
-			advance = false;
-			scene = -1;
-			while(!advance){
-				pause(1);
-			}
-		}
-		if (theirPKMNLeft == 0){
-			remove(opponent);
-			remove(trainerSprite);
-			remove(theirName);
-			remove(ourName);
-			remove(ourMaxHPIndicator);
-			remove(ourHPIndicator);
-			remove(theirMaxHPIndicator);
-			remove(theirHPIndicator);
-			opponentName = elitefour.getName();
-			opponent = new GImage("DrakeTrainer.png");
-			trainerSprite = new GImage("Trainer_Battle.png");
-			opponent.setSize(OPPONENT_WIDTH, OPPONENT_HEIGHT);
-			trainerSprite.setSize(OPPONENT_WIDTH,OPPONENT_HEIGHT);
-			add(trainerSprite, getWidth()-BORDER-trainerSprite.getWidth(),BORDER+GAME_HEIGHT-trainerSprite.getHeight()-textfield.getHeight());
-			add(opponent, BORDER+0,275-224+20);
-			background2.sendToBack();
-			opponentSprite.sendToBack();
-			trainer.sendToBack();
-			background.sendToBack();
-			while(opponent.getX()<239){
-				opponent.move(3,0);
-				trainerSprite.move(-3, 0);
-				pause(9);
-			}
-			
-			Line1 = new GLabel("You won the battle!", Line1X, Line1Y);
-			Line1.setFont("COURIER-15");
-			Line1.setColor(Color.BLACK);
-			add(Line1);
-			
-			Line2 = new GLabel("Press A to continue on!", Line2X, Line2Y);
-			Line2.setFont("COURIER-15");
-			Line2.setColor(Color.BLACK);
-			add(Line2);
-			advance = false;
-			scene = 0;
-			while(!advance){
-				pause(1);
-			}
-			remove(Line1);
-			remove(Line2);
-			scene = 2;
-		}
-	}
 	
 	/* BattleInterface()
 	 * Most important "method" of this game.
